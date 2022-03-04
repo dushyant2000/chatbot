@@ -75,5 +75,5 @@ def get_answer(q):
     ans = ""
     for i in res:
         ans = ans + (i['summary_text'])
-    return {'answer': get_answer_ext(q) + ans }
+    return {'answer': get_answer_ext(q) + "\n" + ans }
 print(get_answer("What is full form AICTE?"))
