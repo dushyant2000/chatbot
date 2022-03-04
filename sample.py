@@ -54,7 +54,7 @@ def get_answer(q):
     QA_input = QA_input.split()
     QA_input = QA_input[0:700]
     QA_input = " ".join(QA_input)
-    res = summarizer(QA_input,  padding = true, truncation = true,  max_length=200, min_length=30)
+    res = summarizer(QA_input,  padding = True, truncation = True,  max_length=200, min_length=30)
     ans = ""
     for i in res:
         ans = ans + (i['summary_text'])
