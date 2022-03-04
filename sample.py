@@ -1,4 +1,5 @@
 import json
+import torch
  
 f = open('data.json')
 data = json.load(f)
@@ -56,3 +57,4 @@ def get_answer(q):
     for i in res:
         ans = ans + (i['summary_text'])
     return ans
+print(get_answer("What is full form AICTE?"))
