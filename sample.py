@@ -52,7 +52,7 @@ def get_answer(q):
     # print(c)
     QA_input = q + "[SEP]" + c
     QA_input = QA_input.split()
-    QA_input = QA_input[0:700]
+#     QA_input = QA_input[0:700]
     QA_input = " ".join(QA_input)
     res = summarizer(QA_input, max_length=200, min_length=30, **tokenizer_kwargs)
     ans = ""
