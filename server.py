@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/chatbot/<string:question>', methods = ['GET'])
 def get_answer(question):
     try:
+        print(question, file=sys.stdout)
         import sample
         response = jsonify(sample.get_answer(question))
         response.headers.add('Access-Control-Allow-Origin', '*')
