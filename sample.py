@@ -44,7 +44,7 @@ model_name = "facebook/bart-large-cnn" #phiyodr/bart-large-finetuned-squad2
 # RameshArvind/roberta_long_answer_nq
 
 summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device = 0)
-tokenizer_kwargs = {'padding':True,'truncation':True,max_length=200, min_length=30,'return_tensors':'pt'}
+tokenizer_kwargs = {'padding':True,'truncation':True,'max_length'=200, 'min_length'=30,'return_tensors':'pt'}
 
 # prediction = model_pipeline('sample text to predict',**tokenizer_kwargs)
 def get_answer(q):
