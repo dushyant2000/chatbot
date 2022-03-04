@@ -52,7 +52,7 @@ from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 model_name = "deepset/roberta-base-squad2" #phiyodr/bart-large-finetuned-squad2
 # RameshArvind/roberta_long_answer_nq
 
-nlp = pipeline('question-answering', model=model_name, tokenizer=model_name, device = 0)
+nlp = pipeline('question-answering', model=model_name, tokenizer=model_name, device = 1)
 
 def get_answer_ext(q):
     QA_input = {
