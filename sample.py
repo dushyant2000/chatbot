@@ -47,6 +47,23 @@ summarizer = pipeline("summarization", model="facebook/bart-large-cnn", device =
 tokenizer_kwargs = {'truncation':True}
 
 # prediction = model_pipeline('sample text to predict',**tokenizer_kwargs)
+
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+model_name = "deepset/roberta-base-squad2" #phiyodr/bart-large-finetuned-squad2
+# RameshArvind/roberta_long_answer_nq
+
+nlp = pipeline('question-answering', model=model_name, tokenizer=model_name, device = 0)
+
+def get_answer_ext(q):
+    QA_input = {
+        'question': q,
+        'context': data,
+    }
+    res = nlp(QA_input, topk = 1, doc_stride = 128, max_answer_len = 50)
+    ans = ""
+    done = []
+    return res['answer']
+
 def get_answer(q):
     c = get_ctx(q)
     # print(c)
@@ -58,5 +75,5 @@ def get_answer(q):
     ans = ""
     for i in res:
         ans = ans + (i['summary_text'])
-    return {'answer': ans}
+    return {'answer': ans + get_answer_ext(q)}
 print(get_answer("What is full form AICTE?"))
