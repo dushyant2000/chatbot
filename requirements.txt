@@ -1,2 +1,4 @@
-Flask==2.0.3
-transformers==4.16.2
+Flask
+transformers
+nltk
+sentence_transformers  
