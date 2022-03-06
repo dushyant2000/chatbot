@@ -62,6 +62,7 @@ def get_answer_ext(q):
     res = nlp(QA_input, topk = 1, doc_stride = 128, max_answer_len = 50)
     ans = ""
     done = []
+    if (res['score'] < 0.5):return ""
     return res['answer']
 
 def get_answer(q):
